@@ -23,7 +23,7 @@ before_install:
   - test "$(find . -type f -not -path "./.git/*" -perm /111)" == ./tests/laravel-test.sh
 
 install:
-  - composer self-update --snapshot
+  - composer self-update --preview
   - composer validate --strict
   - travis_retry composer require "illuminate/contracts:${LARAVEL_VERSION}" --dev --no-update --no-interaction
   - composer install --prefer-dist --no-interaction --no-suggest
