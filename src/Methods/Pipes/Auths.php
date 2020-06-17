@@ -43,7 +43,7 @@ final class Auths implements PipeContract
         if (in_array($classReflectionName, $this->classes, true)) {
             $config = $this->resolve('config');
 
-            $authModel = $this->getDefaultAuthModel($config);
+            $authModel = $this->getAuthModel($config);
 
             if ($authModel !== null) {
                 $found = $passable->sendToPipeline($authModel);
